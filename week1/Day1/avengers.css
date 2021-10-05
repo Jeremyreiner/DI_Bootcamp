@@ -76,7 +76,7 @@ div.desc {
 
 * {
   box-sizing: border-box;
-}
+https://static.wikia.nocookie.net/marvelmovies/images/f/fa/Avengers_%28The_Whole_Team%29.png/revision/latest?cb=20190526222205}
 
 .responsive {
   padding: 0 6px;
@@ -84,16 +84,18 @@ div.desc {
   width: 24.99999%;
 }
 
-@media only screen and (max-width: 700px) {
+@media only all and (max-width: 700px) {
   .responsive {
     width: 49.99999%;
     margin: 6px 0;
+
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .responsive {
+@media only all and (max-width: 500px) {
+  body{
     width: 100%;
+    background-color: red;
   }
 }
 
