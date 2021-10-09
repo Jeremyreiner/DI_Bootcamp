@@ -19,6 +19,10 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+div.h4{
+  border-bottom: ;
+  justify-content: center;
+}
 
 li a:hover:not(.active) {
   background-color: transparent;
@@ -40,8 +44,8 @@ li a:hover:not(.active) {
 
 img {
   border-radius: 50%;
-  width: 10vw;
-  height: 20vh;
+  width: 27vw;
+  height: 33vh;
   border: 2px solid grey;
   padding: 2px;
 }
@@ -95,8 +99,8 @@ img {
 }
 
 .headshot{
-   border: 1px solid blue;
-  background-color: #e6ffff;
+   border: 1px solid transparent;
+  background-color: transparent;
   width: 50%;
   display:flex;
   align-content: center;
@@ -105,8 +109,8 @@ img {
 }
 
 .info{
-  border: 1px solid red;
-  background-color: #ffd6cc;
+  border: 1px solid transparent;
+  background-color: transparent;
   width: 50%;
   display:flex;
   align-content: center;
@@ -115,8 +119,8 @@ img {
 }
 
 .submit{
-  border: 1px solid red;
-  background-color: #ffd6cc;
+  border: 1px solid none;
+  background-color: none;
   width: 50%;
  
 }
@@ -125,7 +129,35 @@ img {
 .body{
   display:flex;
   flex-direction: column;
-  background-color:#e1dedd87;
+  background-color:none;
   margin: 5px;
   
+}
+div.body{
+  display:flex;
+  flex-direction: row;
+  border-bottom: 1px solid gray;
+}
+div.info{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+section.row{
+  display: flex;
+  flex-direction: row;
+  text-align: start;
+}
+section.row1{
+  display:flex;
+  justify-content: center;
+}
+div.column{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-left: 30px;
+}
+h3.indent{
+  text-indent: 30px
 }

@@ -1,0 +1,10 @@
+@media only screen and (max-width: 600px) {
+  section.table {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  div.row  {
+    display:none;
+}

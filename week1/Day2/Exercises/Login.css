@@ -1,0 +1,81 @@
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button.register {
+  border-radius: 12px;
+  color: white;
+  background-color: transparent;
+  border:1px solid white;
+  margin:4px 2px;
+
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+.a {
+	float: right;
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+  width: 100%}
+}
+}
+
+div.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2{
+  text-align:center;
+}
+h3{
+  display:flex;
+  border-bottom: gray;
+  text-align: center;
+}
+body{
+  display: flex;
+}
+section.right{
+  background-color:grey;
+}
+section.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-content: center; */
+    justify-content: center;
+    background-color: purple;
+    color: white;
+}
