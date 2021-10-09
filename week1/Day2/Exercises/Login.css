@@ -67,8 +67,9 @@ h3{
 body{
   display: flex;
 }
-section.right{
+section.left{
   background-color:grey;
+  width: 30vw;
 }
 section.right{
     display: flex;
@@ -78,4 +79,5 @@ section.right{
     justify-content: center;
     background-color: purple;
     color: white;
+    width: 30vw;
 }
