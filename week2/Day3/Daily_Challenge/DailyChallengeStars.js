@@ -12,26 +12,26 @@
 
 let star = "*"
 let longStar = "* * * * * *";
-// do
-// {
-//     console.log(star);
-//     star = star + " *";
-// }
-// while (star.length <= longStar.length);
+do
+{
+    console.log(star);
+    star = star + " *";
+}
+while (star.length <= longStar.length);
 
-star = "*";
+// star = "*";
 
-let currentRow = 0
-// outer loop compares star to longStar
-do {
-    currentRow = currentRow + 2;
+// let currentRow = 0
+// // outer loop compares star to longStar
+// do {
+//     currentRow = currentRow + 2;
 
-    // returns another row and adds another star
-    do 
-    {
-        console.log(star)
-        star= star + " *";
-    }
-    while ( star.length <= currentRow);
+//     // returns another row and adds another star
+//     do 
+//     {
+//         console.log(star)
+//         star= star + " *";
+//     }
+//     while ( star.length <= currentRow);
     
-} while( star.length <= longStar.length);
+// } while( star.length <= longStar.length);

@@ -14,7 +14,7 @@
  
 // }
 
-
+  
 // // // let colors = ["blue", "red", "green", "yellow"]
 // let choices = ["st", "nd", "rd", "th"]
 
@@ -101,52 +101,39 @@
 
 
 
-// let guestList = {
-//   randy: "Germany",
-//   karla: "France",
-//   wendy: "Japan",
-//   norman: "England",
-//   sam: "Argentina",
-// }
+let guestList = {
+  randy: "Germany",
+  karla: "France",
+  wendy: "Japan",
+  norman: "England",
+  sam: "Argentina",
+}
 
-// let entered_name = prompt("What is your name? ");
+let entered_name = prompt("What is your name? ");
 
-// //["randy", "karla"...]
-// let all_guest_names = Object.keys(guestList)
+//["randy", "karla"...]
+let all_guest_names = Object.keys(guestList)
 
-// // Determine if the entered_name exists in all_guest_names
-// // https://masteringjs.io/tutorials/fundamentals/foreach-break
+// Determine if the entered_name exists in all_guest_names
+// https://masteringjs.io/tutorials/fundamentals/foreach-break
 
-// all_guest_names.every(guest_name => {
-//   let match = false;
-//   if (entered_name === guest_name){
-//     match = true; 
-//     return false; // Exists the .every() loop
-//   }
-//   else(
-//     return true;
-//   )
-// })
+all_guest_names.every(guest_name => {
+  let match = false;
+  if (entered_name === guest_name){
+    match = true; 
+    return false; // Exists the .every() loop
+  }
+  else(
+    return true;
+  )
+})
 
-// if (match){
-//   console.log(`Hi! I'm  ${guest_name}, and I'm from ${guestList[guest_name]}`)
-// }
-// else(
-//   console.log("Hi! I'm a guest.")
-// )
-
-
-
-// 
-
-//
-
-
-
-
-
-
-
+if (match){
+  console.log(`Hi! I'm  ${guest_name}, and I'm from ${guestList[guest_name]}`)
+}
+else(
+  console.log("Hi! I'm a guest.")
+)
 
 
 
@@ -196,13 +183,7 @@
 
 // console.log(`${array[0]} ${details['my']} ${array[1]} ${details['is']} ${array[2]} ${details['the']}`);
 
-
-
-// let concat = array.concat(array2)
-// // console.log(array)
-// // console.log(array2)
-
-// console.log(concat)
+//
 
 
 
@@ -222,7 +203,7 @@
 
 
 let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"]
-console.log(names)
+// console.log(names)
 let str1 = names[0].charAt(0)
 let str2 = names[1].charAt(0)
 let str3 = names[2].charAt(0)
@@ -230,14 +211,15 @@ let str4 = names[3].charAt(0)
 let str5 = names[4].charAt(0)
 let str6 = names[5].charAt(0)
 let first_letter = str1 + str2 + str3 +str4 +str5 + str6
-// console.log(password)
+// console.log(first_letter)
 let array = first_letter.split("")
 // console.log(array)
 let orderP = array.sort();
 console.log(orderP)
 // console.log(array)
 let society_name_array = array.sort();
-console.log(society_name_array)
+// console.log(society_name_array)
+
 let society_name = society_name_array.toString()
  society_name = society_name.replace(/,/g, "")
 console.log(society_name)
