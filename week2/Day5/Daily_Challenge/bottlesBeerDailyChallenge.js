@@ -10,7 +10,7 @@ let numberPrompt = parseInt(prompt(`Please give me a number to start the song.`)
 // In the song everytime a bottle falls we subtract the bottles by 1.
 let maxTotal = numberPrompt;
 for (let i = 0; i < maxTotal; i++){
-    let totalBottles = maxTotal - i;;.l
+    let totalBottles = maxTotal - i;
     let newBottleTotal = totalBottles -1;
     console.log(`${totalBottles}, bottles of beer on the wall, ${totalBottles}, bottles of beer. Take one down, pass it around, ${newBottleTotal} bottles of beer on the wall.`)
 }
