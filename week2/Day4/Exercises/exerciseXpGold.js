@@ -88,20 +88,20 @@
 // isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 1) ➞ true
 // isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6) ➞ false
 // ----------------------------------------------------------------------------
-function isOmnipresent(array, argument){
-    for(let i = 0; i < array.length; i++){
-        //sub array = new array, array[i] is an array within a array
-        let subArray = array[i];
-        //inArray new variable equals the subArray and includes the parameter argument
-        let inArray = subArray.includes(argument);
-        //if inArray is not true
-        if (inArray != true){
-            return "false";
-        }
-    }
-    return "true";
+// function isOmnipresent(array, argument){
+//     for(let i = 0; i < array.length; i++){
+//         //sub array = new array, array[i] is an array within a array
+//         let subArray = array[i];
+//         //inArray new variable equals the subArray and includes the parameter argument
+//         let inArray = subArray.includes(argument);
+//         //if inArray is not true
+//         if (inArray != true){
+//             return "false";
+//         }
+//     }
+//     return "true";
     
-}
-let array = [[3, 4], [8, 3, 2], [3], [9, 3], [5, 3], [4, 3]];
-let argument = 3;
-console.log(isOmnipresent(array, argument));
+// }
+// let array = [[3, 4], [8, 3, 2], [3], [9, 3], [5, 3], [4, 3]];
+// let argument = 3;
+// console.log(isOmnipresent(array, argument));
