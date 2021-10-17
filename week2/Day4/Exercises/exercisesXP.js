@@ -218,7 +218,7 @@ if (changeLeftAfterQuarters != 0) {
             // Do we have enough nickles?
             let quarterCount = (changeLeftAfterNickels * 100) / 5;
             // Do we have enough?
-
+            
             if (pocketChange[0] > nickelCount) {
                 console.log("True")
             }

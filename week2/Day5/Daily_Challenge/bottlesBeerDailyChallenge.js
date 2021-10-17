@@ -12,5 +12,10 @@ let maxTotal = numberPrompt;
 for (let i = 0; i < maxTotal; i++){
     let totalBottles = maxTotal - i;
     let newBottleTotal = totalBottles -1;
+    if(totalBottles > 1){
     console.log(`${totalBottles}, bottles of beer on the wall, ${totalBottles}, bottles of beer. Take one down, pass it around, ${newBottleTotal} bottles of beer on the wall.`)
+    }
+    else if(totalBottles === 1){
+        console.log(`${totalBottles}, bottle of beer on the wall, ${totalBottles}, bottle of beer. Take one down, pass it around, ${newBottleTotal} bottles of beer on the wall.`)
+    }
 }

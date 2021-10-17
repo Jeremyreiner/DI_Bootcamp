@@ -34,7 +34,7 @@ for (let i = 0; i < arrayOfWords.length; i++){
     //spaces will be empty gap in shortest word between borders
     let spaces = longestLength - word.length;
     //creates the frame and interior of the box
-    console.log("* " + word + " ".repeat (spaces) + " *");
+    console.log("* " + word + " ".repeat(spaces) + " *");
 }
 // bottem bar
 console.log("*".repeat (longestLength + 4));
