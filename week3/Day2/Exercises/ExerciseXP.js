@@ -206,3 +206,28 @@
 
 // })
 //-------------------------------------------------------------------------------------------------------------------
+// Bonus Exercise 4 : Event Listeners
+// Instructions
+// Add as many events listeners as possible to one element on your webpage. 
+// Each listener should do a different thing, for instance- change position x, change position y, change color, change the font size… and more.
+let button = document.getElementById("submit")
+console.log(button)
+
+button.addEventListener("click", function(){
+    console.log("hello click")
+})
+button.addEventListener("toggle", function(){
+    console.log("hello toggle")
+})
+button.addEventListener("dblclick", function(){
+    console.log("hello double")
+})
+button.addEventListener("dragover", function(){
+    console.log("hello drag over")
+})
+button.addEventListener("keyup", function(){
+    console.log("hello key up")
+})
+button.addEventListener("mouseover", function(){
+    console.log("hello mouse over")
+})
