@@ -7,7 +7,6 @@
 // The user could click the button at least three times and get a new story. Display the stories randomly.
 //-----------------------------------------------------------------------------------------------------
 // //creating a variable using all elements with the tag name input
-// let inputValue = document.getElementsByTagName("input")
 let li = document.querySelectorAll("li")
 //creating a button variable using the element id 
 let btn = document.getElementById("lib-button")
@@ -20,8 +19,13 @@ btn.addEventListener("click", function () {
     let personEl = person.value
     let newAdj= adjective.value
     let newNoun = noun.value
- 
+    //creates an alert if one of the input values is left blank
+    if(placeValue==""||newVerb==""||personEl==""||newAdj==""||newNoun=="") {
+        alert("Fill all the input of the form.")
+    }
+    //find the span value and to it text
     let spanStory = document.getElementById("story")
     spanStory.innerHTML=`the place is ${placeValue}, and the verb is ${newVerb}, and the adj is ${newAdj}, and the noun is ${newNoun}, and the person is ${personEl}`;
+
 
 })

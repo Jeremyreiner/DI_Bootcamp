@@ -42,38 +42,40 @@
 // In your javascript file add the functionality which will allow you
 //  to drag the square/box and drop it into a larger box.
 //-----------------------------------------------------------------------------------
-//first locate the item that we want to drag
-// let item = document.getElementsByClassName("draggedItem")[0]
-// //next on the item we need to add a listener functionvt
-// console.log(item)
-// //to activate an action
-// item.addEventListener("dragstart", dragItem)
-// //give the drag item function a job
-// function dragItem(event){
-//     console.log("start Dragging", event.target.item)
-//     event.target.classList.add("StartDragging")
-//     event.dataTransfer.setData("text/plain", event.target.id)
+// first locate the item that we want to drag
+let item = document.getElementsByClassName("draggedItem")[0]
+//next on the item we need to add a listener functionvt
+console.log(item)
+//to activate an action
+item.addEventListener("dragstart", dragItem)
+//give the drag item function a job
+function dragItem(event){
+    console.log("start Dragging", event.target.item)
+    event.target.classList.add("StartDragging")
+    event.dataTransfer.setData("text/plain", event.target.id)
 
-// }
-// let allDropZones = document.getElementsByClassName("dropzone")
-// console.log(allDropZones)
-// function addListener(){
-//     for (let zone of allDropZones){
-//         zone.addEventListener("dragover", dragOver)
-//         zone.addEventListener("drop", dropItem)
+}
 
-//     }
-// }
-// addListener()
+let allDropZones = document.getElementsByClassName("dropzone")
+console.log(allDropZones)
 
-// function dragOver(event){
-//     event.preventDefault();
-// }
-// function dropItem(event){
-//     event.preventDefault()
-//     let droppedElement = event.dataTransfer.getData("text/plain")
-//     let nodeElement = document.getElementById(droppedElement)
-//     event.target.appendChild(nodeElement)
-// }
+function addListener(){
+    for (let zone of allDropZones){
+        zone.addEventListener("dragover", dragOver)
+        zone.addEventListener("drop", dropItem)
+
+    }
+}
+addListener()
+
+function dragOver(event){
+    event.preventDefault();
+}
+function dropItem(event){
+    event.preventDefault()
+    let droppedElement = event.dataTransfer.getData("text/plain")
+    let nodeElement = document.getElementById(droppedElement)
+    event.target.appendChild(nodeElement)
+}
 
 //---------------------------------------------------------------------------------------------------------------

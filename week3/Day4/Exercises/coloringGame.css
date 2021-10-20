@@ -1,0 +1,48 @@
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  background-color: grey;
+  padding: 5px;
+  border: 5px solid black;
+  height: 20em;
+
+}
+.column{
+    background-color: black;
+    border: 5px solid black;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+.paintPanel{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr, repeat(7, 1fr);
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+.gridInput{
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background-color: whitesmoke;
+    padding: 5px;
+    border: 1px solid black;
+
+
+}
+.colors{
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    flex-wrap: wrap;
+}
+.button{
+    grid-column: 1/ span 3;
+    height: 50%;
+
+}
