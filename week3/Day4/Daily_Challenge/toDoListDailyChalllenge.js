@@ -32,8 +32,11 @@ addToDoButton.addEventListener("click", function(){
         ToDoContainer.appendChild(label)
         //reset the value of the input bar
         userInput.value = "";
+
+        
         let inputTag = document.getElementById(`${newText}`)
         console.log(inputTag)
+        //add event listeners for crossing out and removing the toDo
         inputTag.addEventListener("click", function(){
             label.style.textDecoration = "line-through";
         })

@@ -22,4 +22,8 @@ function keyUp(e) {
     ul.appendChild(li)
     input.value = " ";
 }
+function checkChar(event){
+  if(event.keyDown <= 90 && event.keyDown <= 65)
+    console.log(event.keyDown + "is a letter")
+}
 

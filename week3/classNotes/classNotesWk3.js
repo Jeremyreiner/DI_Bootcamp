@@ -299,44 +299,44 @@
 
 <div id="container"></div> */}
 //-------------------------------------------------------------------------------------------
-// let bookForm = document.forms[0]; //select by index
-// let bookForm = document.forms['add-book'] //select by id
+let bookForm = document.forms[0]; //select by index
+let bookForm = document.forms['add-book'] //select by id
 
-// // console.log(bookForm)
-// // console.log("elements", bookForm.elements.title)
-// //take the variable and add an event listener witht he submit and add book uncalled funtion
-// bookForm.addEventListener("submit", addBook)
-// //create a new variable div with all the elements of the id container
-// let div = document.getElementById("container")
+// console.log(bookForm)
+// console.log("elements", bookForm.elements.title)
+//take the variable and add an event listener witht he submit and add book uncalled funtion
+bookForm.addEventListener("submit", addBook)
+//create a new variable div with all the elements of the id container
+let div = document.getElementById("container")
 
-// function addBook (event) {
-//     //cancels the default reload of sending an input 
-// 	event.preventDefault();
-//     //creates a variable for value title
-// 	let inputTitle = event.target.elements.title
-//     //creates a variable for value author
-// 	let inputAuthor = event.target.elements.author
-//     // creates a variable for the input value of title
-// 	let titleValue = inputTitle.value;
-//     //creates a variable for the input value of author
-// 	let authorValue = inputAuthor.value;
-//     //creates a new paragraph element
-// 	let pOne = document.createElement("p")
+function addBook (event) {
+    //cancels the default reload of sending an input 
+	event.preventDefault();
+    //creates a variable for value title
+	let inputTitle = event.target.elements.title
+    //creates a variable for value author
+	let inputAuthor = event.target.elements.author
+    // creates a variable for the input value of title
+	let titleValue = inputTitle.value;
+    //creates a variable for the input value of author
+	let authorValue = inputAuthor.value;
+    //creates a new paragraph element
+	let pOne = document.createElement("p")
 
-// 	let textOne = document.createTextNode(titleValue)
-// 	let textTwo = document.createTextNode(authorValue)
+	let textOne = document.createTextNode(titleValue)
+	let textTwo = document.createTextNode(authorValue)
 
 
-// 	pOne.appendChild(textOne)
-// 	pTwo.appendChild(textTwo)
+	pOne.appendChild(textOne)
+	pTwo.appendChild(textTwo)
 
-// 	div.appendChild(pTwo)
-// 	div.appendChild(pOne)
+	div.appendChild(pTwo)
+	div.appendChild(pOne)
 
-// 	inputTitle.value = "";
-// 	inputAuthor.value = ""
+	inputTitle.value = "";
+	inputAuthor.value = ""
 	 
-// }
+}
 //------------------------------------------------------------------DAY 3 DOM--------------------------------------------------------------------------------------------------------
 //how to find an an object using selectors
 			//querySelectorAll(selectors: DOM string)
@@ -370,72 +370,72 @@
 //---------------------------ADDING DRAGGABLE OBJECTS EVENT LISTENER-------------------FROM-HERE-DOWN-----------------------------------------
 
 // 1. --------------------Retrieve the item of choice--------------------------------
-let item = document.getElementById("item");
-//adds an event listener to created variable item for dragging element
-item.addEventListener("dragstart", startDragging);
+// let item = document.getElementById("item");
+// //adds an event listener to created variable item for dragging element
+// item.addEventListener("dragstart", startDragging);
 
-//---------------create a function for dragging the selected item----------------
-//the function of the event  listener  will be created for dragging
-function startDragging (event) {
-	//always console.log to see that the function is working. check to see that the target item is aquired
-	console.log("start dragging", event.target.id);
-	//event.target refers directly back to the event you want to use (dragstart) and the target you are targeting(id = item)
-	event.target.classList.add("startDragging");
-	//when the event is called, we want to transfer the item data as well, so we need to set the data element of the file.
-	//we call the event-----we call the data transfer --- and set the data method.
-	// event------.----------dataTransfer-------.---------setData("type of data", id of the elem)
-	event.dataTransfer.setData("text/plain",event.target.id)
-}
+// //---------------create a function for dragging the selected item----------------
+// //the function of the event  listener  will be created for dragging
+// function startDragging (event) {
+// 	//always console.log to see that the function is working. check to see that the target item is aquired
+// 	console.log("start dragging", event.target.id);
+// 	//event.target refers directly back to the event you want to use (dragstart) and the target you are targeting(id = item)
+// 	event.target.classList.add("startDragging");
+// 	//when the event is called, we want to transfer the item data as well, so we need to set the data element of the file.
+// 	//we call the event-----we call the data transfer --- and set the data method.
+// 	// event------.----------dataTransfer-------.---------setData("type of data", id of the elem)
+// 	event.dataTransfer.setData("text/plain",event.target.id)
+// }
 
 
 //2. ----------dropping the dragged target to the desired location-----------------
 //now we select where the dragged item will be dropped and identify the locations
-let allDropZones = document.getElementsByClassName("dropzone");
-//console.log to check that we have selected our specific drop zones
-console.log(allDropZones)
+// let allDropZones = document.getElementsByClassName("dropzone");
+// //console.log to check that we have selected our specific drop zones
+// console.log(allDropZones)
 
 
 //-----------------create a function------------------------
 //that adds an event listener to our specific drop zones and cycle through using a for loop to assign listeners to item
-function addTheListeners (){
-	//simple for loop attaches a event lister to the drop location. specifically giving a drag over listener 
-	//and a drop listener to each zone item inside of the class allDropZones
-	for (let zone of allDropZones){//	the function of dragging over is uncalled until used
-		zone.addEventListener("dragover", draggingOver)
-							//the function dropping is uncalled until used
-		zone.addEventListener("drop", dropping)
-	}
-}
-//call back funtion of add listeners so from the start all desired variables return a listener.
-//the next functions are called but not opened until the listener is activated
-addTheListeners()
+// function addTheListeners (){
+// 	//simple for loop attaches a event lister to the drop location. specifically giving a drag over listener 
+// 	//and a drop listener to each zone item inside of the class allDropZones
+// 	for (let zone of allDropZones){//	the function of dragging over is uncalled until used
+// 		zone.addEventListener("dragover", draggingOver)
+// 							//the function dropping is uncalled until used
+// 		zone.addEventListener("drop", dropping)
+// 	}
+// }
+// //call back funtion of add listeners so from the start all desired variables return a listener.
+// //the next functions are called but not opened until the listener is activated
+// addTheListeners()
 
 //------------------- create function-------------------
 // that adds an event listener that defigns what happens when the dragged item will hover over the drag zone
 //----------------you can use this function to say that if the dragged item matches than you can drop the item here.
 //-----------------otherwise the dragged item is not able to be dropped here
 //by default we need to prevent the default setting of dragover event
-function draggingOver (event){
-	//nothing is done when item is hovering over the selected drop. no action is taking, but the spot is identified
-	event.preventDefault();
-//return the function only when desired and without (), this will activate it only when desired. Line 404
-}
+// function draggingOver (event){
+// 	//nothing is done when item is hovering over the selected drop. no action is taking, but the spot is identified
+// 	event.preventDefault();
+// //return the function only when desired and without (), this will activate it only when desired. Line 404
+// }
 
 //-------------------- Create a function----------------------
 // what happens when you drop the dragged item
-function dropping(event){
-	//prevents automatically outside of the specified location???????????
-	event.preventDefault();	
-	// 1. returns the event.dataTransfer.set that we have set for the dragging function
-	// and we can save this in a new location using the event.dataTransfer.getData and then saving it in a variable
-	let elementToDrop = event.dataTransfer.getData("text/plain")
-	// 2. now we need to call the new variable by its ID name to select the transfer of data
-	let elemNode = document.getElementById(elementToDrop)
-	//append the data transfer to the correct location.
-	// using the specified event(dropping) and the target (drop zone) we are appending (dataTransfer.getData)
-	event.target.appendChild(elemNode)
-//return the function only when desired and without (), this will activate it only when desired. Line 406
-}
+// function dropping(event){
+// 	//prevents automatically outside of the specified location???????????
+// 	event.preventDefault();	
+// 	// 1. returns the event.dataTransfer.set that we have set for the dragging function
+// 	// and we can save this in a new location using the event.dataTransfer.getData and then saving it in a variable
+// 	let elementToDrop = event.dataTransfer.getData("text/plain")
+// 	// 2. now we need to call the new variable by its ID name to select the transfer of data
+// 	let elemNode = document.getElementById(elementToDrop)
+// 	//append the data transfer to the correct location.
+// 	// using the specified event(dropping) and the target (drop zone) we are appending (dataTransfer.getData)
+// 	event.target.appendChild(elemNode)
+// //return the function only when desired and without (), this will activate it only when desired. Line 406
+// }
 //---------------------------------HTML/ CSS FOR DRAGGABLE OBJECTS-------------------------------------------------------------
 // <!DOCTYPE html>
 // <html>

@@ -1,6 +1,15 @@
+section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 body{
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(to right, rgb(211, 80, 220), rgb(226, 255, 148));
 }
 .container{
@@ -12,10 +21,14 @@ body{
 #inputField{
 
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
     font-size: 25px;
 }
 #addToDo{
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
     font-size: 30px;
 }
 .listTasks{
