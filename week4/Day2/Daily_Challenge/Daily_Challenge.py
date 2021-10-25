@@ -15,20 +15,23 @@
 age = input("Please enter your birthday in the format (DD/MM/YYYY): ").replace("/", " ")
 list_age = age.split()
 # print(list_age)
-years = int(list_age[2])
+years = int(list_age[-1])
 current_age = 2021 - years
-last_digit = current_age.splice(0,1)
+last_digit = str(current_age)[1:]
 print(last_digit)
+# Add candles to cake
+candles = "___" +("i" * int(last_digit)) +"___" 
+cake =f'''
+      {candles}
+      |:H:a:p:p:y:|
+    __|___________|__
+   |^^^^^^^^^^^^^^^^^|
+   |:B:i:r:t:h:d:a:y:|
+   |                 |
+   ~~~~~~~~~~~~~~~~~~~
+'''
+print(cake)
 
-
-
-
-# current_age = 
-# print('''
-# #       |:H:a:p:p:y:|
-# #     __|___________|__
-# #    |^^^^^^^^^^^^^^^^^|
-# #    |:B:i:r:t:h:d:a:y:|
-# #    |                 |
-# #    ~~~~~~~~~~~~~~~~~~~
-# ''')
+# Find if the year is a leap year
+if years % 4 == 0:
+    print(cake)
