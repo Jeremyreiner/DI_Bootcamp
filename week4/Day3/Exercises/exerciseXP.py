@@ -46,34 +46,37 @@
 # Instructions
 # Here is some information about a brand.
 # ---------------------------------------------------------------
-# brand = {
-#     "name": "Zara",
-#     "creation_date": 1975,
-#     "creator_name": "Amancio Ortega Gaona" ,
-#     "type_of_clothes": {
-#         "men", 
-#         "women", 
-#         "children", 
-#         "home",
-#         },
-#     "international_competitors": {
-#         "Gap",
-#         "H&M", 
-#         "Benetton"
-#         }, 
-#     "number_stores": 7000,
-#     "major_color":{ 
-#         "France": "blue", 
-#         "Spain": "red", 
-#         "US":" pink, green"
-#         }
-# }
+brand = {
+    "name": "Zara",
+    "creation_date": 1975,
+    "creator_name": "Amancio Ortega Gaona" ,
+    "type_of_clothes": {
+        "men", 
+        "women", 
+        "children", 
+        "home",
+        },
+    "international_competitors": {
+        "Gap",
+        "H&M", 
+        "Benetton"
+        }, 
+    "number_stores": 7000,
+    "major_color":{ 
+        "France": "blue", 
+        "Spain": "red", 
+        "US":" pink, green"
+        }
+}
 # brand["number_stores"] = 2 # 3. Change the number of stores to 2.
 # brand["Clients"] = "These are who our clients are..." # 4. Print a sentence that explains who Zaras clients are.
 # brand["Country creation"] = "spain" # 5. Add a key called country_creation with a value of Spain.
-# brand["international_competitors"] = "Gap", "H&M", "Benetton", "desigual" # 6. Check if the key international_competitors is in the dictionary. If it is, add the store Desigual.
+# if "international_competitors" in brand.keys():
+#     brand["international_competitors"] = "Gap", "H&M", "Benetton", "desigual"
+# print(brand) # 6. Check if the key international_competitors is in the dictionary. If it is, add the store Desigual.
 # del brand["creation_date"] # 7. Delete the information about the date of creation.
-# print(brand["international_competitors"][3])# 8. Print the last international competitor.
+# c= brand["international_competitors"] # 8. Print the last international competitor.
+# print(list(c)[-1])
 # print(brand["major_color"]["US"])# 9. Print the major clothes colors in the US.
 # for index, keys in enumerate(brand.items()):# 10. Print the amount of key value pairs (ie. length of the dictionary).
 #     print(index, keys)
@@ -100,7 +103,7 @@
 
 # ---------------------------------------------------------------
 
-users = [ "Mickey", "Minnie", "Donald","Ariel","Pluto"]
+# users = [ "Mickey", "Minnie", "Donald","Ariel","Pluto"]
 # nums = range(0, 6)
 #1
 # >>> print(disney_users_A)
@@ -108,7 +111,7 @@ users = [ "Mickey", "Minnie", "Donald","Ariel","Pluto"]
 # for user in zip(users, nums):
 #     print(user)
 # print({v: k for k, v in enumerate(users)})
-#2/
+# 2/
 # >>> print(disney_users_B)
 # {0: "Mickey",1: "Minnie", 2: "Donald", 3: "Ariel", 4: "Pluto"}
 # for user in zip(nums, users):
@@ -117,9 +120,9 @@ users = [ "Mickey", "Minnie", "Donald","Ariel","Pluto"]
 #     print(name)
 
 #3/ 
-# # >>> print(disney_users_C)
+# >>> print(disney_users_C)
 # {"Ariel": 0, "Donald": 1, "Mickey": 2, "Minnie": 3, "Pluto": 4}
-sorted = sorted(users)
-# for user in zip(sorted, nums):
-#     print(user)
-print({v: k for k, v in enumerate(sorted)})
+# sorted = sorted(users)
+# # for user in zip(sorted, nums):
+# #     print(user)
+# print({v: k for k, v in enumerate(sorted)})
