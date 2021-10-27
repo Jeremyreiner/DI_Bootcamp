@@ -23,48 +23,63 @@ matrix = [
 col_a =[]
 col_b =[]
 col_c = []
+
 def col1():
+    word = ""
     for i in matrix:
         col1 = i[0]
         col_a.append(col1)
     str1 = ''.join(col_a)
+    count =0
     for i in str1:
         if i.isalpha() == True:
+            word += i
             print(i)
         else:
-           pass
-    print(" ")
+            count +=1
+            if count == 2:
+                k = " "
+                word += k
+    return word
 
 def col2():
+    word = ""
     for i in matrix:
         col2 = i[1]
         col_b.append(col2)
     str2 = ''.join(col_b)
+    count=0
     for i in str2:
         if i.isalpha() == True:
+            word += i
             print(i)
-        elif i.isalpha == False:
-            pass
         else:
-            print("")
-
+            count +=1
+            if count == 2:
+                k = " "
+                word += k
+    return word
 
 def col3():
+    word = ""
     for i in matrix:
         col3 = i[2]
         col_c.append(col3)
     str3 = ''.join(col_c)
     for i in str3:
         if i.isalpha() == True:
+            word += i
             print(i)
+        elif i == "!":
+            print("!")
+            word += i
+    return word
 
-col1()
-col2()
-col3()
-print("!")
+# col1()
+# col2()
+# col3()
 
-
-
+print(f"{col1()}{col2()}{col3()}")
 
 
 
