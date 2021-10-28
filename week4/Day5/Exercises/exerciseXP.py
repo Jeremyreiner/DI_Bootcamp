@@ -17,8 +17,8 @@ def print_board(board):
     print("|" + " " + board['7'] + (" |" + " ") + board['8'] + (" |" + " ")  + board['9'] + " " + "|")
     print("-"*13)
 
-print('''Welcome to tic tac toe. Player 1 will be player X\n
-and player 2 will be player O. Please doirect where you want to insert your X or O using number values.\n
+print('''Welcome to tic tac toe. Player 1 will be player X
+and player 2 will be player O. Please direct where you want to insert your X or O using number values.
 IE. First row will be (1, 2, 3) Middle row will be (3, 4, 5) and last row (7, 8, 9).\n
 Good luck!
 ''')
