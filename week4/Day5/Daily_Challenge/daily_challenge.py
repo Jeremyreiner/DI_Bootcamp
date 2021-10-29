@@ -9,9 +9,9 @@
 # bag,hello,without,world
 # --------------------------------------------------------------------------------
 user_input = input("Enter words seperated by commas: ")
-string_list = user_input.split(",")
-string_list.sort()
-print(string_list)
-ordered_str = ','.join(string_list)
-print(ordered_str)
 
+output = [word for word in user_input.split() ]
+print(','.join(sorted(list(output))))
+
+
+# apple,banana,red,blue,green
