@@ -33,16 +33,15 @@
 # print(oldest.name, oldest.age)
 
 
-
 # ---------------------------------------------------------
 # Exercise 2 : Dogs
 # Instructions
 
-# Create an if statement outside of the class to check which dog is bigger. 
+# Create an if statement outside of the class to check which dog is bigger.
 # Print the name of the bigger dog.
 # # ---------------------------------------------------------
 # Create a class called Dog.
-# In this class, create an __init__ method that takes two parameters : name and height. 
+# In this class, create an __init__ method that takes two parameters : name and height.
 # # This function instantiates two attributes, which values are the parameters.
 # class Dog:
 #     def __init__(self, name, height):
@@ -51,12 +50,12 @@
 #     # Create a method called bark that prints the following string “<dog_name> goes woof!”.
 #     def bark(self):
 #         print(f"{self.name} goes WOOF!!")
-#     # Create a method called jump that prints the following string “<dog_name> jumps <x> cm high!”. 
+#     # Create a method called jump that prints the following string “<dog_name> jumps <x> cm high!”.
 #     def jump(self):
 #         x = self.height*2 # x is the height*2.
 #         print(f"{self.name} can jump {x} cm high!!")
 
-# # Outside of the class, create an object called davids_dog. 
+# # Outside of the class, create an object called davids_dog.
 # # His dog’s name is “Rex” and his height is 50cm.
 # davids_dog = Dog("Rex", 50)
 # sarahs_dog = Dog("Teacup", 20)
@@ -71,7 +70,7 @@
 # # sarahs_dog.jump()
 
 
-# # Create an if statement outside of the class to check which dog is bigger. 
+# # Create an if statement outside of the class to check which dog is bigger.
 # # Print the name of the bigger dog.
 # data_list = [("jet", 15),("Rex", 50),("Teacup", 20)]
 
@@ -98,131 +97,132 @@
 # Define a class called Song, it will show the lyrics of a song.
 # Its __init__() method should have two arguments: self and lyrics (a list).
 # class Song:
-#     def __init__(self, lyrics):
-#         self.lyrics = lyrics
-#         lyrics = []
+#     def __init__(self):
+#         self.lyrics = {}
 
 #     # Inside your class create a method called sing_me_a_song that prints each element of lyrics on its own line.
 #     # Create an object, for example:
 #     # stairway= Song(["There’s a lady who's sure","all that glitters is gold", "and she’s buying a stairway to heaven"])
-#     def sing_me_a_song(self, title, lyrics):
-#         if lyrics:
+#     def sing_me_a_song(self):
+#         song = {
+#             "title": "stairway",
+#             "line2": "There’s a lady who's sure",
+#             "line3": "all that glitters is gold",
+#             "line4": "and she’s buying a stairway to heaven"
+#         }
+#         self.lyrics.append(song)
+#         print(song)
 
-#         title = self.lyrics
-#         lyrics = self.lyrics
-#         print(title + lyrics)
-# lyrics = Song("There’s a lady who's sure all that glitters is gold and she’s buying a stairway to heaven")
 
-# print(lyrics)
+# Song.sing_me_a_song()
 
 # ---------------------------------------------------------
 # Exercise 4 : Afternoon At The Zoo
 # Instructions
 # Create a class called Zoo.
 # In this class create a method __init__ that takes one parameter: zoo_name.
-# It instantiates two attributes: animals (an empty list) 
+# It instantiates two attributes: animals (an empty list)
 # and name (name of the zoo).
+
+
 class Zoo():
     def __init__(self, zoo_name):
         self.zoo_name = zoo_name
         self.animals = []
         self.animal_sold = []
-        self.sorted_list = []
-        self.sorted_classes = []
-# Create a method called add_animal that takes one parameter new_animal. 
-# This method adds the new_animal to the animals list as long as it isn’t already in the list.
+        self.new_animal_dict = {}
+
     def add_animal(self, new_animal):
+        '''Create a method called add_animal that takes one parameter new_animal.
+        This method adds the new_animal to the animals list as long as it isn’t already in the list.'''
+        animals = ["emu", "baboon", "bear",
+                   "eel", "cougar", "cat", "ape", "dog"]
+        for animal in animals:
+            self.animals.append(animal)
         if new_animal not in self.animals:
             self.animals.append(new_animal)
-            
-# Create a method called get_animals that prints all the animals of the zoo.
-    def get_animals(self):
-        print("List of animals")
-        print(f"These are all the animals at {self.zoo_name}: {self.animals}")
 
-# Create a method called sell_animal that takes one parameter animal_sold. 
-# This method removes the animal from the list and of course the animal needs to exist in the list.
+    def get_animals(self):
+        '''Create a method called get_animals that prints all the animals of the zoo.'''
+        print(
+            f"Welcome to {self.zoo_name}. We currently have {len(self.animals)} animals on campus: {self.animals}")
+
     def sell_animal(self, animal_sold):
+        '''
+        This method removes the animal from the list and of course the animal needs to exist in the list.
+        '''
         animal_list = []
 
         for i in self.animals:
-            animal_list += i
+            animal_list.append(i)
 
         for i in animal_list:
             if i == animal_sold:
                 animal_list.remove(i)
-                self.animals = [tuple(animal_list)]
+                self.animals = animal_list
 
-        print(f"This is the updated list of animals after selling '{animal_sold}', {self.animals}")
+        print(
+            f"This is the updated list of animals after selling '{animal_sold}', {self.animals}")
 
-# Create a method called sort_animals that sorts the animals alphabetically 
-# and groups them together based on their first letter.
-# Example
-# { 
-#     1: "Ape",
-#     2: ["Baboon", "Bear"],
-#     3: ['Cat', 'Cougar'],
-#     4: ['Eel', 'Emu']
+    # Example
+    # {
+    #     1: "Ape",
+    #     2: ["Baboon", "Bear"],
+    #     3: ['Cat', 'Cougar'],
+    #     4: ['Eel', 'Emu']
     # def sorted_animals(self):
     #         return self.animals.sort()
+    def sort_animals(self):
+        '''Create a method called sort_animals that sorts the animals alphabetically
+        and groups them together based on their first letter.'''
+        sorted_classes = {
+            '1': [],
+            '2': [],
+            '3': [],
+            '4': [],
+            '5': []
+        }
+        self.animals = sorted(self.animals)
+        # print(f"This list has been sorted alpabetically {self.animals}")
 
-
-    def sort_animals(self, sorted_list):
-        if sorted_list:
-            sorted_classes = {
-                '1': [sorted_list],
-                '2': [sorted_list],
-                '3': [sorted_list],
-                '4': [sorted_list],
-                '5': [sorted_list]
-            }
-
+        # Make a list for all the first letters
+        list_first_letter = []
         for i in self.animals:
-            self.sorted_list.append(sorted(i))
-            tuple(self.animals) == self.sorted_list
-        print(f"This list has been sorted alpabetically {self.animals}")
-        
-        
+            if i[0] not in list_first_letter:
+                list_first_letter.append(i[0])
+        # print(list_first_letter)
 
+        # Get each first letter from the list
+        # Then check each animal first letter with the list of first letters
+        k = 0
+        for char in list_first_letter:  # for every iteration of first letter list
+            k += 1
+            # for every index/ animal enumerated iteration of self.animal list
+            for i, animal in enumerate(self.animals):
+                # if the first letter in first iteration of animal == first iteration in first letter list
+                if animal[0] == char:
+                    # append to sorted classes dict to row k the animals that match
+                    sorted_classes[str(k)].append(animal)
+        self.new_animal_dict = sorted_classes  # append the new dict to self.farm
+        # print(sorted_classes)
 
-    # def further_organizing(self, sorted_class):
-    #     for animal in list(*self.animals):
-    #         for i in animal:
-    #             if i == "a":
-    #                 sorted_classes['1'] += i
-    #                 print(f"These are animals listed by their first initial letter {sorted_classes}")
-    #             elif i == "b":
-    #                 sorted_classes['2'] += i
-    #                 print(f"These are animals listed by their first initial letter {sorted_classes}")
-    #             elif i == "c":
-    #                 sorted_classes['3'] += i
-    #                 print(f"These are animals listed by their first initial letter {sorted_classes}")
-    #             elif i == "d":
-    #                 sorted_classes['4'] += i
-    #                 print(f"These are animals listed by their first initial letter {sorted_classes}")
-    #             elif i == "e":
-    #                 sorted_classes['5'] += i
-    #                 print(f"These are animals listed by their first initial letter {sorted_classes}")
-    #         print(sorted_classes)
+    def get_groups(self):
+        '''Create a method called get_groups that prints the animal/animals inside each group.'''
+        for value in self.new_animal_dict.values():
+            print(value)
 
-# Create a method called get_groups that prints the animal/animals inside each group.
-    # def sort_animals(self): 
+    def ramat_gan_safari(self):
+        '''Create an object called ramat_gan_safari and call all the methods.'''
+        print(f"Welcome to {self.zoo_name}.")
+        print("What animal would you like to add to the zoo? ")
+        new_animal = input()
+        name.add_animal(new_animal)
+        name.get_animals()
+        print("Which animal would you like to move from the zoo? ")
+        animal_sold = input()
+        name.sell_animal(animal_sold)
+        name.sort_animals()
+        name.get_groups()
 
-
-# Create an object called ramat_gan_safari and call all the methods.
-# Tip: The zookeeper is the one who will use this class.
-# Example
-# Which animal should we add to the zoo --> Giraffe
-# x.add_animal(Giraffe)
 name = Zoo("Point Defiance Zoo")
-new_animal = "emu", "baboon", "bear", "eel", "cougar", "cat", "ape", "dog"
-Zoo.add_animal(name, new_animal)
-name.get_animals()
-animal_sold = "cat"
-updated_animal_roster = Zoo.sell_animal(name, animal_sold)
-
-Zoo.sort_animals(name, updated_animal_roster)
-
-
-
-# # ---------------------------------------------------------
+name.ramat_gan_safari()

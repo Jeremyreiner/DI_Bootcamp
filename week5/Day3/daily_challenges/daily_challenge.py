@@ -47,9 +47,9 @@ class Circle:
 circle = Circle(50)
 circle_2 = Circle(7)
 print(circle.area())
-# Circle.add_circle(circle)
-# Circle.add_circle(circle_2)
-# Circle.print_circle()
+Circle.add_circle(circle)
+Circle.add_circle(circle_2)
+print(Circle.print_circle(circle))
 print(circle.perimeter())
 print(circle.__le__(circle_2))
 print(circle.__add__(circle_2))
@@ -57,8 +57,8 @@ print(circle.__add__(circle_2))
 # print(bigger_circle.area())
 
 
-# class Racecar():
-#     def __init__(self, model, reg_no, top_speed=0, nitros=False):
+# !class Racecar():
+#         def __init__(self, model, reg_no, top_speed=0, nitros=False):
 #         self.model = model
 #         self.reg_no = reg_no
 #         self.top_speed = top_speed
