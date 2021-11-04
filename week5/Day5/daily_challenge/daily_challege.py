@@ -17,15 +17,15 @@
 # Note: Note: Feel free to implement/create any attribute, method or function needed to make this work, be creative :)
 # import requests module 
 # -----------------------------------------------
-# import requests 
-# def time_search():
-#     print('Would you like to see how long it takes to retrieve your request? (yes / no)')
-#     user_input = input()
-#     if user_input == "yes":
-#         # Making a get request 
-#         u_input = input("What website would you like to use to check? ")
-#         response = requests.get(u_input) 
-#         print(response.elapsed)
-#     else:
-#         print("ok... next time.")
-# time_search()
+import requests 
+def time_search():
+    print('Would you like to see how long it takes to retrieve your request? (yes / no)')
+    user_input = input()
+    if user_input == "yes":
+        # Making a get request 
+        u_input = input("What website would you like to use to check? ")
+        response = requests.get(u_input) 
+        print(response.elapsed)
+    else:
+        print("ok... next time.")
+time_search()
