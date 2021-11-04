@@ -24,7 +24,7 @@
 #     if user_input == "yes":
 #         # Making a get request 
 #         u_input = input("What website would you like to use to check? ")
-#         response = requests.get(https://www.nfl.com/) 
+#         response = requests.get(u_input) 
 #         print(response.elapsed)
 #     else:
 #         print("ok... next time.")

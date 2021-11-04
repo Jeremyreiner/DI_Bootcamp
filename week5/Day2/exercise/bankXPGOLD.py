@@ -33,70 +33,6 @@
 # Edit withdraw and deposit to only work if authenticated is set to True, 
 # if someone tries an action without being authenticated raise an Exception
 # ------------------------------------------------------------
-class BankAccount():
-    def __init__(self, username, password, balence = 0, athenticated = False):
-        self.username = username
-        self.password = password
-        self.balence = balence
-        self.athenticated = athenticated
-        self.transaction = []
-
-    def athenticate(self):
-        username = input("Please enter a username: ")
-        if username == self.username:
-            password = input("Please enter your password: ")
-            if password == self.password:
-                self.athenticated = True
-        else: 
-            raise Exception("Either your Username or Password is incorrect.")
-
-    def deposit(self):
-        if self.athenticated == True:
-            amount = int(input("how much would you like to deposit: "))
-            if amount <= 0:
-                raise Exception("You entered a negative deposit. Please re-enter a correct positive deposit")
-            else:
-                self.balence += amount
-                self.transaction.append(amount)
-                print(f"{self.username}'s deposit has been approved")
-        else: 
-            raise Exception("You need to authenticate yourself before the ability to make a deposit.")
-
-    def withdraw(self):
-        if self.athenticated == True:
-            amount = int(input("how much would you like to withdraw: "))
-            if amount >= self.balence:
-                raise Exception("Insufficiant funds.")
-            else:
-                self.balence -= amount
-                self.transaction.append(amount)
-                print(f"{self.username}'s withdraw has been approved")
-        else:
-            raise Exception("You need to authenticate yourself before the ability to make a withdrawel.")
-
-    def transaction(self):
-        if self.athenticated == True:
-            print("TRANSACTIONS")
-            print("------------")
-            for transaction in self.transaction:
-                print(f"{self.username}'s history of transactions: {transaction}. Amount total: {self.balence}")
-        else:
-            raise Exception("This information is private. You have yet to athenticate yourself.")
-
-class MinimumBalanceAccount(BankAccount):
-    def __init__(self, name, min_balance=0):
-        self.min_balence = min_balance
-        super().__init__(name, balence = 0)
-    
-    def withdraw(self, amount):
-        if (self.balence - amount) >= self.min_balence:
-            self.balence -= amount
-            self.transaction.append(self.balence)
-            print(f"{self.name}, your withdraw request of: {amount}, has been Approved")
-            print(f"{self.name}, your new total is: {self.balence}")
-        else:
-            raise Exception(f"This request takes your min balence below {self.min_balence}. Your request has been denied.")
-# ------------------------------------------------------------
 # todo: Part IV: BONUS Create an ATM class
 # __init__:
 # Accepts the following parameters: account_list and try_limit.
@@ -110,52 +46,6 @@ class MinimumBalanceAccount(BankAccount):
 # Hint: Check out this tutorial
 
 # Sets attribute current_tries = 0
-
-# ------------------------------------------------------------
-# class ATM(BankAccount):
-#     def __init__(self, try_limit = 3):
-#         self.try_limit = try_limit
-#         self.account_list = []
-#         super().__init__(BankAccount.username, BankAccount.password, balence = 0, athenticated = False)
-
-
-        # current_tries = 0
-        # self.account_list.append(BankAccount.username)
-        # for account in self.account_list:
-        #     if isinstance(account, BankAccount):
-        #         self.account_list.append(account)
-        #     elif isinstance(account, MinimumBalanceAccount):
-        #         self.account_list.append(account)
-        # for account in self.account_list:
-        #     try:
-        #         BankAccount.athenticate()
-        #         break
-        #     except:
-        #         current_tries +=1
-        #         remainder = self.try_limit - current_tries
-        #         print(f"You have {remainder} attempts remaining.")
-        #         break
-        #     finally:
-        #         if current_tries < self.try_limit:
-        #             print("You have reached maximum attempts for this account.")
-
-my_account = BankAccount("gerki", "12345", 10)
-# atm_account = ATM()
-# ATM.add_to_atm(my_account)
-my_account.athenticate()
-# print(my_account.athenticated)
-my_account.deposit()
-# my_other_account = BankAccount("gerki")
-# BankAccount.deposit(my_other_account, 550)
-print(my_account.transaction)
-BankAccount.withdraw(my_account)
-BankAccount.transaction(my_account)
-
-# my_account1 = MinimumBalanceAccount("j")
-# my_account1.deposit(500)
-# print(my_account1.transaction)
-# my_account1.withdraw(455)
-    
 # ------------------------------------------------------------
 # Call the method show_main_menu (see below)
 # Methods:
@@ -178,4 +68,131 @@ BankAccount.transaction(my_account)
 # Accepts an instance of BankAccount or MinimumBalanceAccount.
 # The method will start a loop giving the user the option to deposit, withdraw or exit.
 # ------------------------------------------------------------
+
+class BankAccount():
+    def __init__(self, username, password, balence = 0, athenticated = False):
+        self.username = username
+        self.password = password
+        self.balence = balence
+        self.athenticated = athenticated
+        self.transactions = []
+
+    def athenticate(self):
+            username = input("Please enter a username: ")
+            if username == self.username:
+                password = input("Please enter your password: ")
+                if password == self.password:
+                    self.athenticated = True
+                    return self.athenticated
+            else: 
+                print("Either your Username or Password is incorrect.")
+                return False
+
+
+    def deposit(self):
+        if self.athenticated == True:
+            amount = int(input("how much would you like to deposit: "))
+            if amount <= 0:
+                raise Exception("You entered a negative deposit. Please re-enter a correct positive deposit")
+            else:
+                self.balence += amount
+                self.transactions.append(amount)
+                print(f"{self.username}'s deposit has been approved")
+        else: 
+            raise Exception("You need to authenticate yourself before the ability to make a deposit.")
+
+    def withdraw(self):
+        if self.athenticated == True:
+            amount = int(input("how much would you like to withdraw: "))
+            if amount >= self.balence:
+                raise Exception("Insufficiant funds.")
+            else:
+                self.balence -= amount
+                self.transactions.append(amount)
+                print(f"{self.username}'s withdraw has been approved")
+        else:
+            raise Exception("You need to authenticate yourself before the ability to make a withdrawel.")
+
+    def show_transactions(self):
+        if self.athenticated == True:
+            print("TRANSACTIONS")
+            print("------------")
+            for transaction in self.transactions:
+                print(f"{self.username}'s history of transactions: {transaction}. Amount total: {self.balence}")
+        else:
+            raise Exception("This information is private. You have yet to athenticate yourself.")
+
+class MinimumBalanceAccount(BankAccount):
+    def __init__(self, name, password, balence = 0, athenticated = False, min_balance=0):
+        self.min_balence = min_balance
+        super().__init__(name, password, balence, athenticated)
+
+    
+    def withdraw(self):
+        super().withdraw()
+        if self.balence < self.min_balence:
+            raise Exception(f"This request takes your min balence below {self.min_balence}. Your request has been denied.")
+
+class ATM(MinimumBalanceAccount):
+    def __init__(self, name, password, balence = 0, athenticated = False, min_balence = 0,  try_limit = 3, account_list = []):
+        self.try_limit = 3
+        self.account_list = account_list
+        self.name = name
+        super().__init__(name, password, balence, athenticated, min_balence)
+
+    def add_accounts(self):
+            if isinstance(self, MinimumBalanceAccount):
+                self.account_list.append(self.name)
+            elif isinstance(self, BankAccount):
+                self.account_list.append(self.name)
+
+    def show_accounts(self):
+        if self.athenticated == True:
+            print(self.account_list)
+
+    def main_menu(self):
+        print("Would you like to do a transaction (yes / no ): ")
+        user_input = input().upper()
+        while user_input != "No":
+                print("What would you like to do?\nW: Withdraw\nD: Deposit\nT: Transaction History\nDONE: Log out")
+                user_input = input("What would you like to do?\nW: Withdraw\nD: Deposit\nT: Transaction History\nDONE: Log out\n").upper()
+                if user_input == "W":
+                    self.withdraw()
+                    
+                elif user_input =="D":
+                    self.deposit()
+
+                elif user_input == "T":
+                    self.show_transactions()
+
+                if user_input == "DONE":
+                    print("Have a good day")
+                    break
+    # check to see if user is inside account list of usernames
+    def log_in(self):
+        count = 0
+        while count < self.try_limit:
+            if self.name in self.account_list:
+                    # verify the account using the athenticate method
+                if self.athenticate() == True:
+                    # if account is verified, return to atm method main menu
+                    print("athenticated")
+                    self.main_menu()
+                else:
+                    count += 1
+                    print(f"Your count is {count}")
+                    if count == 3: 
+                        print("You have failed to log in after three attempts. Your account is now locked.")
+
+
+
+
+
+
+my_atm = ATM("gerki", "12345", balence = 2000)
+my_atm2 = ATM("asdf", "12345", balence = 2000)
+my_atm.add_accounts()
+my_atm2.add_accounts()
+
+my_atm2.log_in()
 
