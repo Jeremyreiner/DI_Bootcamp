@@ -1,0 +1,7 @@
+-- insert into actors(first_name, last_name, age, number_oscars)
+-- values
+-- 		('Matt', 'Damon', '1970-10-08', '5'),
+-- 		('George', 'Clooney', '1961-05-06', '2'),
+-- 		('Tom', 'Cruise', '', '8')
+-- select count(first_name) from actors
+
