@@ -1,0 +1,19 @@
+-- select * from customer
+
+-- select concat(first_name, ' ', last_name) as full_name from customer;
+
+-- select distinct create_date from customer
+
+-- select * from customer order by first_name desc
+
+-- select film_id, title, description, release_year, rental_rate from film order by release_year asc
+
+-- select phone, address_id, address, district from address where district = 'texas'
+
+select rental_rate, title from film order by rental_rate limit 10
+
+
+
+
+
+
