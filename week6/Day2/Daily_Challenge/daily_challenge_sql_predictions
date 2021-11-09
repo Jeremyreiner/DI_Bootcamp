@@ -1,0 +1,40 @@
+-- CREATE TABLE FirstTab (
+--      id integer, 
+--      name VARCHAR(10)
+-- )
+
+-- INSERT INTO FirstTab VALUES
+-- (5,'Pawan'),
+-- (6,'Sharlee'),
+-- (7,'Krish'),
+-- (NULL,'Avtaar')
+
+-- CREATE TABLE SecondTab (
+--     id integer 
+-- )
+
+-- INSERT INTO SecondTab VALUES
+-- (5),
+-- (NULL)
+
+-- SELECT * FROM FirstTab
+
+-- SELECT * FROM SecondTab
+
+-- the will count the null value id
+-- SELECT COUNT(*) 
+-- FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NULL )
+
+
+-- will count the amount of ids 5
+-- SELECT COUNT(*) 
+-- FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id = 5 )
+
+
+-- will return ids that are not matched from second id
+-- SELECT COUNT(*) 
+-- FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab )
+	
+-- counts all the ids that are not included null
+-- SELECT COUNT(*) 
+-- FROM FirstTab AS ft WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NOT NULL )
