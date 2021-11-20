@@ -10,8 +10,10 @@ dead_cell = 0
 live_cell = 1
 
 def begining_state(w, h):
-    rand_board =  np.array(np.random.randint(0,1, (w*h)))
-    start_state = rand_board.reshape(w, h)
+    select_board =  np.array(np.random.randint(0,1, (w*h)))
+    # rand_board =  np.array(np.random.randint(0,2, (w*h)))
+    # start_state = rand_board.reshape(w, h)
+    start_state = select_board.reshape(w, h)
     start_state[4][2] = live_cell
     start_state[4][3] = live_cell
     start_state[4][4] = live_cell
@@ -24,18 +26,6 @@ def board_state_d(w, h):
     d_state = np.array(np.random.randint(0,1, (w*h)))
     dead_board = d_state.reshape(w, h)
     return dead_board
-
-def random_board_state(w, h):
-    board_state = board_state_d(w, h)
-    for x in range(0, board_width(board_state)):
-        for y in range(0, board_height(board_state)):
-            random_number = random.random()
-            if random_number > 0.5:
-                cell_state = live_cell
-            else:
-                cell_state = dead_cell
-            board_state[x][y] = cell_state
-    return board_state
 
 def board_width(board_state):
     return len(board_state)
