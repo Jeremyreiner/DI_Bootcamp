@@ -10,8 +10,14 @@ dead_cell = 0
 live_cell = 1
 
 def begining_state(w, h):
-    rand_board =  np.array(np.random.randint(0,2, (w*h)))
+    rand_board =  np.array(np.random.randint(0,1, (w*h)))
     start_state = rand_board.reshape(w, h)
+    start_state[4][2] = live_cell
+    start_state[4][3] = live_cell
+    start_state[4][4] = live_cell
+    start_state[5][1] = live_cell
+    start_state[5][2] = live_cell
+    start_state[5][3] = live_cell
     return start_state
 
 def board_state_d(w, h):
@@ -42,13 +48,13 @@ def prettyfy(board_state):
         dead_cell: chr(9608),
         live_cell: chr(9618)
     }
-    lines= []
-    for y in range(0, board_height(board_state)):
+    new_board= []
+    for x in range(0, board_height(board_state)):
         line = ''
-        for x in range(0, board_width(board_state)):
+        for y in range(0, board_width(board_state)):
             line += display[board_state[x][y]] * 2
-        lines.append(line)
-        nd_2d_arry = np.array('\n'.join(lines))
+        new_board.append(line)
+        nd_2d_arry = np.array('\n'.join(new_board))
     return nd_2d_arry
 
 
@@ -110,32 +116,20 @@ def next_board_state(previous_state):
     for x in range(0, width):
         for y in range(0, height):
             next_state[x][y] = next_c_value((x,y), previous_state)
-    return next_state 
+    return next_state
 
-print(prettyfy(begining_state(5,5)))
-time.sleep(2)
-print('\n')
-while True:
-    print(prettyfy(next_board_state(begining_state(25, 25))))
+def run_game(start_state):
+    current_b = start_state
+    print(prettyfy(current_b)) 
     print('\n')
-    time.sleep(5)
+    while True:
+        next_b = next_board_state(current_b)
+        print(prettyfy(next_b))
+        print('\n')
+        time.sleep(3)
+        current_b = next_b
 
-
-# def run_game():
-#     print("Would you like to watch conways game of life? (Yes / No / Import)")
-#     user_input = input().lower()
-#     if user_input == "yes":
-#         game = True
-#         print(prettyfy(begining_state(5,5)))
-#         print('\n')
-#         while game == True:
-#             print(next_board_state(begining_state(5, 5)))
-#             print('\n')
-#             time.sleep(5)
-#     else:
-#         print("Have a good day.")
-# run_game()
-
+run_game(begining_state(20,20))
 
 
 
